@@ -1,0 +1,13 @@
+before_install :
+    - sudo apt-get update -qq
+sudo : required
+dist : trusty
+cache : 
+    - apt
+branches : 
+    only : 
+        - master
+        - dev
+script :
+    - bash -eu ./docker_install.sh
+
