@@ -5,16 +5,15 @@ Docker setup scripts for GNU/Linux Ubuntu
 
 ## Installation
 
-Download this repository.
+First, download this repository.
 
 ```
 git clone https://github.com/Tiryoh/docker_setup_scripts_ubuntu.git
 ```
 
-Run `docker_install.sh`.
+Next, run `docker_install.sh`.
 
 ```
-chmod +x ./docker_install.sh
 ./docker_install.sh
 ```
 
