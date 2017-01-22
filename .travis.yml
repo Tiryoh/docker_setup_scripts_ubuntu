@@ -1,5 +1,3 @@
-before_install :
-    - sudo apt-get update -qq
 sudo : required
 dist : trusty
 cache : 
@@ -8,6 +6,9 @@ branches :
     only : 
         - master
         - dev
+before_install :
+    - sudo apt-get update -qq
 script :
     - bash -eu ./docker_install.sh
+    - docker -v
 
