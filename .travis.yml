@@ -11,4 +11,5 @@ before_install :
 script :
     - bash -eu ./docker_install.sh
     - docker -v
+    - bash -eu ./docker-compose_install.sh
 
