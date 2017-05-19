@@ -5,6 +5,14 @@ Docker setup scripts for GNU/Linux Ubuntu
 
 ## Installation
 
+### Simple Installation
+
+```
+curl -SsfL https://git.io/ubuntu-docker-install | bash
+```
+
+### Manual Installation
+
 First, download this repository.
 
 ```
