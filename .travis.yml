@@ -2,14 +2,12 @@ sudo : required
 dist : trusty
 cache : 
   - apt
-branches : 
-  only : 
-    - master
-    - dev
-before_install :
+before_script :
   - sudo apt-get update -qq
+  - sudo apt-get remove -y postgresql*
+  - sudo apt-get upgrade -qq --allow-unauthenticated
 script :
-  - curl -SsfL https://git.io/ubuntu-docker-install | bash
+  - if [ "$TRAVIS_BRANCH" == "master"  ] && [ "$TRAVIS_PULL_REQUEST" == "false"  ]; then curl -SsfL https://git.io/ubuntu-docker-install | bash; else ./docker_install.sh; fi
   - docker -v
-  - curl -SsfL https://git.io/ubuntu-docker-compose-install | bash
+  - if [ "$TRAVIS_BRANCH" == "master"  ] && [ "$TRAVIS_PULL_REQUEST" == "false"  ]; then curl -SsfL https://git.io/ubuntu-docker-compose-install | bash; else ./docker-compose_install.sh; fi
 
