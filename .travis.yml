@@ -10,4 +10,4 @@ script :
   - if [ "$TRAVIS_BRANCH" == "master"  ] && [ "$TRAVIS_PULL_REQUEST" == "false"  ]; then curl -SsfL https://git.io/ubuntu-docker-install | bash; else ./docker_install.sh; fi
   - docker -v
   - if [ "$TRAVIS_BRANCH" == "master"  ] && [ "$TRAVIS_PULL_REQUEST" == "false"  ]; then curl -SsfL https://git.io/ubuntu-docker-compose-install | bash; else ./docker-compose_install.sh; fi
-
+  - docker-compose -v
