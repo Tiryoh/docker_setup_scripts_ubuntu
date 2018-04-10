@@ -3,7 +3,8 @@
 set -eu
 
 sudo apt-get update
-sudo apt-get remove docker docker-engine docker.io
+[[ ! -z $(dpkg -l | grep docker) ]] && sudo apt-get remove docker docker.io
+[[ ! -z $(dpkg -l | grep docker-engine) ]] && sudo apt-get remove docker-engine
 sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 [[ $(cat /etc/lsb-release | grep DISTRIB_RELEASE | sed -e 's/.*=\([0-9]*\.[0-9]*\)/\1/g') -eq "14.04" ]] && sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
