@@ -3,6 +3,8 @@ Docker setup scripts for GNU/Linux Ubuntu
 
 [![Build Status](https://travis-ci.org/Tiryoh/docker_setup_scripts_ubuntu.svg?branch=master)](https://travis-ci.org/Tiryoh/docker_setup_scripts_ubuntu)
 
+NOTE: There are official install scripts for Raspberry Pi [here](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/).
+
 ## Installation
 
 ### Simple Installation
@@ -10,6 +12,14 @@ Docker setup scripts for GNU/Linux Ubuntu
 ```
 curl -SsfL https://git.io/ubuntu-docker-install | bash
 ```
+
+tested on:
+* x86_64 CPU
+  * Ubuntu 14.04.5 Desktop
+  * Ubuntu 16.04.4 Desktop
+* armv7l CPU (Raspberry Pi 3)
+  * Ubuntu MATE 16.04.4
+  * Raspbian Strech 9.1
 
 ### Manual Installation
 
