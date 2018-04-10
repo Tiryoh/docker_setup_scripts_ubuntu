@@ -20,7 +20,8 @@ sudo apt-get install -y apt-transport-https ca-certificates curl software-proper
 if [ $(arch | grep -e x86_64 -e i686) ]; then
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/${OS} $(lsb_release -cs) stable"
 elif [ $(arch | grep arm) ]; then
-	sudo add-apt-repository "deb [arch=armhf] https://download.docker.com/linux/${OS} $(lsb_release -cs) stable"
+	[ "${OS}" = "ubuntu" ] && sudo add-apt-repository "deb [arch=armhf] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+	[ "${OS}" = "debian" ] && echo "deb [arch=armhf] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 fi
 sudo apt-get update
 sudo apt-get install -y docker-ce
