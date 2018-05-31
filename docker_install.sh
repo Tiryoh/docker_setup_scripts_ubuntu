@@ -9,8 +9,8 @@ elif [ -e /etc/debian_version ]; then
 fi
 
 sudo apt-get update
-[ ! -z "$(dpkg -l | grep docker)" ] && sudo apt-get remove docker docker.io
-[ ! -z "$(dpkg -l | grep docker-engine)" ] && sudo apt-get remove docker-engine
+[ ! -z "$(dpkg -l | grep docker)" ] && sudo apt-get remove -y docker docker.io
+[ ! -z "$(dpkg -l | grep docker-engine)" ] && sudo apt-get remove -y docker-engine
 sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 [ "${OS}" = "ubuntu" ] && [ "$(cat /etc/lsb-release | grep DISTRIB_RELEASE | sed -e 's/.*=\([0-9]*\.[0-9]*\)/\1/g')" = "14.04" ] && sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 
