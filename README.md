@@ -9,8 +9,16 @@ NOTE: There are official install scripts for Raspberry Pi [here](https://www.ras
 
 ### Simple Installation
 
+#### docker
+
 ```
 curl -SsfL https://git.io/ubuntu-docker-install | bash
+```
+
+#### docker-compose
+
+```
+curl -SsfL https://git.io/ubuntu-docker-compose-install | bash
 ```
 
 tested on:

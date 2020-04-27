@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-TARGET_DOCER_COMPOSE_VERSION=$(curl -sSfL https://api.github.com/repos/docker/compose/releases/latest | grep html_url | grep docker |sed -e 's/.*tag\/\(.*\)".*/\1/g')
+TARGET_DOCER_COMPOSE_VERSION=$(curl -sSfL https://api.github.com/repos/docker/compose/releases/latest | grep html_url | grep docker | grep releases  | sed -E 's#.*tag/(.*)\".*#\1#g')
 
 [ -z "${TARGET_DOCER_COMPOSE_VERSION}" ] && TARGET_DOCER_COMPOSE_VERSION=1.20.1
 echo "docker-compose version : " ${TARGET_DOCER_COMPOSE_VERSION}
