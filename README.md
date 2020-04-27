@@ -39,5 +39,5 @@ Next, run `docker_install.sh`.
 
 This repository is licensed under the MIT license, see [LICENSE]( ./LICENSE  ).
 
-Unless attributed otherwise, everything is under the MIT license.
+Unless attributed otherwise, everything in this repository is licensed under the MIT license.
 
